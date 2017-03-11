@@ -1,0 +1,53 @@
+/* Song Book icons */
+
+
+.song-text-center {
+    
+    display: flex;
+    justify-content:center; 
+    
+}
+
+.songbookheader-icon:before {
+    font-family: "dashicons";
+    content: "\f330";
+    font-size: 50px;  
+    line-height: 55px;
+   vertical-align: middle;
+   // padding-left: 20%;
+
+}
+
+.songbook-icon:before {
+    font-family: "dashicons";
+    content: "\f330";
+    font-size: 50px;  
+    line-height: 55px;
+    vertical-align: middle;
+    
+}
+
+.song-icon-sheet:before {
+    font-family: "dashicons";
+    content: "\f123";
+    font-size: 50px;  
+    line-height: 55px;
+    vertical-align: middle;
+   // padding-left: 2%;
+}
+
+.song-icon-youtube:before {
+    font-family: "dashicons";
+    //color: rgba(204,24,30,1)!important;
+    content: "\f126";
+    font-size: 50px;  
+    line-height: 55px;
+    vertical-align: middle;
+   // padding-left: 2%;
+}
+    
+
+/* remove the songs listed default bullet point */
+.song li {
+    list-style: none;
+}

@@ -1,0 +1,11 @@
+/*
+Specific CSS for ../fullsongbook permalinks
+*/
+/* 
+    Created on : 12-Oct-2016, 20:59:33
+    Author     : justin.fletcher
+*/
+
+div#sidebar {
+    display: none; 
+}
