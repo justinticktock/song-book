@@ -70,20 +70,20 @@ class SONGBOOK_Settings {
 								'title' 		=> __( 'General', 'songbook-text-domain' ),
 								'description' 	=> __( 'Settings for the song book general purpose.', 'songbook-text-domain' ),	
                                                                 'settings' 		=> array(		
-                                                                                                                array(
-                                                                                                                        'name' 		=> 'song_book_ccli_license_number',
-                                                                                                                        'std' 		=> '',
-                                                                                                                        'label' 	=> __( 'CCLI License: ', 'song_book' ),
-                                                                                                                        'desc'		=> __( "Enter the your organisation CCLI License number (e.g. 73846 ), once entered a new meta box will appear in the songs edit session.", 'song_book' ),
-                                                                                                                        //'type'      => 'field_email_post_types_option',
-                                                                                                                        ),								
-                                                                                                        ),
-                                                                                                ),															
+																								array(
+																										'name' 		=> 'song_book_ccli_license_number',
+																										'std' 		=> '',
+																										'label' 	=> __( 'CCLI License: ', 'song_book' ),
+																										'desc'		=> __( "Enter the your organisation CCLI License number (e.g. 73846 ), once entered a new meta box will appear in the songs edit session.", 'song_book' ),
+																										//'type'      => 'field_email_post_types_option',
+																										),								
+																						),
+                                                        ),															
 							'songbook_plugin_extension' => array(
 									'title' 		=> __( 'Plugin Extensions', 'songbook-text-domain' ),
 									'description' 	=> __( 'These settings are optional.  Selection of any suggested plugin here will prompt you through the installation.  The plugin will be forced active while this is selected; deselecting will not remove the plugin, you will need to manually uninstall.', 'songbook-text-domain' ),					
 									'settings' 		=> array(
-                                                                                                                        array(
+                                                                array(
                                                                                                                             															
 																'name' 		=> 'posts_to_posts',
 																'std' 		=> true,
@@ -98,8 +98,7 @@ class SONGBOOK_Settings {
 																'force_deactivation' 	=> false,
 																'force_activation'      => true,												
 																),
-                                                                                                                        array(
-                                                                                                                            															
+                                                                array(  														
 																'name' 		=> 'wp_force_login',
 																'std' 		=> true,
 																'label' 	=> 'Force Login',
@@ -113,7 +112,7 @@ class SONGBOOK_Settings {
 																'force_deactivation' 	=> false,
 																'force_activation'      => true,												
 																),
-															array(
+                                                                array(
 																'name' 		=> 'songbook_wp_csv',
 																'std' 		=> false,
 																'label' 	=> 'WP CSV',
@@ -127,8 +126,7 @@ class SONGBOOK_Settings {
 																'force_deactivation' 	=> false,
 																'force_activation'      => true,												
 																),
-                                                                                                                        array(
-                                                                                                                            															
+                                                                array(													
 																'name' 		=> 'netbible-tagger',
 																'std' 		=> true,
 																'label' 	=> 'FT NetBible Tagger',
@@ -148,7 +146,7 @@ class SONGBOOK_Settings {
                                                                             
                                                                             
                                                                             
-                                                                                                                            ),
+                                                            ),
 							)				
 						)
 					);
@@ -165,7 +163,7 @@ class SONGBOOK_Settings {
 
 
 /**
- * RBHN_Settings_Additional_Methods class.
+ * sb_Settings_Additional_Methods class.
  */
 
 /**

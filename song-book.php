@@ -13,7 +13,6 @@ License: GPLv2 or later
 
 
 
-
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
@@ -56,10 +55,10 @@ class SONGBOOK {
             $this->plugin_full_path = plugin_dir_path(__FILE__) . 'song-book.php' ;
 
             // Set the constants needed by the plugin.
-            add_action( 'plugins_loaded', array( $this, 'constants' ), 1 );
+            add_action( 'after_setup_theme', array( $this, 'constants' ) );
 
             /* Load the functions files. */
-            add_action( 'plugins_loaded', array( $this, 'includes' ), 2 );
+            add_action( 'after_setup_theme', array( $this, 'includes' ) );
 
             /* Hooks... */
 
@@ -156,7 +155,7 @@ class SONGBOOK {
 		//require_once( SONGBOOK_MYPLUGINNAME_PATH . 'includes/class-settings.php' );  
 
 		// if selected install the plugings and force activation
-		//require_once( SONGBOOK_MYPLUGINNAME_PATH . 'includes/install-plugins.php' );    
+		require_once( SONGBOOK_MYPLUGINNAME_PATH . 'includes/plugin-install.php' );    
 
 		// force songs with no license detail to be hidden
                 // ..removed for now with conflict with search filter pro
