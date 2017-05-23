@@ -20,6 +20,8 @@ Allow church groups to create and share worship song books on any devices (table
 It also helps faithful control and showing the organisation CCLI License number and show this while viewing the copyright song words.
 The site should made private and for members only unless the songs are all in the public domain (e.g. when using for a Christmas Carol songbook )
 
+[demo site](https://justinandco.com/demo/songbook/)
+
 = Plugin site =
 
 [https://justinandco.com/plugins/song-book/](https://justinandco.com/plugins/song-book/)
@@ -51,6 +53,12 @@ To Manually install follow these steps..
 == Frequently Asked Questions ==
 
 == Screenshots ==
+
+1. The Settings 'General' Tab for entry of your CCLI license reference.
+2. The Settings 'Plugin Extensions' Tab for selection of mandatory and suggested plugins.
+3. Admin screen showing Songs 
+4. Admin screen showing the connected Songbook(s) to the current Song edit session. (Connectivity is provided by the 'posts 2 posts' plugin.
+5. Front end Song book for Christmas carols showing one song with a youtube link embedded.
 
 == Changelog ==
 

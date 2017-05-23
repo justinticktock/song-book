@@ -42,13 +42,13 @@ function songbook_tgmpa_register( ) {
 			'installing'                      => __( 'Installing Plugin: %s', 'song-book' ), // %s = plugin name.
 			'oops'                            => __( 'Something went wrong with the plugin API.', 'song-book' ),
 			'notice_can_install_required'     => _n_noop(
-				'Help Notes requires the following plugin: %1$s.',
-				'Help Notes requires the following plugins: %1$s.',
+				'Song Book requires the following plugin: %1$s.',
+				'Song Book requires the following plugins: %1$s.',
 				'song-book'
 			), // %1$s = plugin name(s).
 			'notice_can_install_recommended'  => _n_noop(
-				'Help Notes recommends the following plugin: %1$s.',
-				'Help Notes recommends the following plugins: %1$s.',
+				'Song Book recommends the following plugin: %1$s.',
+				'Song Book recommends the following plugins: %1$s.',
 				'song-book'
 			), // %1$s = plugin name(s).
 			'notice_cannot_install'           => _n_noop(
@@ -57,8 +57,8 @@ function songbook_tgmpa_register( ) {
 				'song-book'
 			), // %1$s = plugin name(s).
 			'notice_ask_to_update'            => _n_noop(
-				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with Help Notes: %1$s.',
-				'The following plugins need to be updated to their latest version to ensure maximum compatibility with Help Notes: %1$s.',
+				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with Song Book: %1$s.',
+				'The following plugins need to be updated to their latest version to ensure maximum compatibility with Song Book: %1$s.',
 				'song-book'
 			), // %1$s = plugin name(s).
 			'notice_ask_to_update_maybe'      => _n_noop(
