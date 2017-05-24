@@ -78,4 +78,4 @@ class SongBookFullContent {
 
 } 
 
-add_action( 'after_setup_theme', array( 'SongBookFullContent', 'get_instance' ) );
+add_action( 'after_setup_theme', array( 'SongBookFullContent', 'get_instance' ), 20 );
