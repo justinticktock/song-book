@@ -3,7 +3,7 @@
 Plugin Name: Song Book
 Plugin URI: 
 Description: The addition of a song post type.
-Version: 1.0
+Version: 1.1
 Author: Justin Fletcher
 Author URI: http://justinandco.com
 Text Domain: songbook-text-domain
@@ -98,9 +98,40 @@ class SONGBOOK {
             add_filter( 'pre_get_posts', array( $this, 'pre_get_posts' ) );
             
 
+            /* Add redirect to Songbook Archive for the site Home Page */
+            add_action( 'pre_get_posts', array( $this, 'redirect_homepage' ) );
                 
 	}
 	
+
+	/**
+	 * redirects the site home page to the songbook archive page.
+	 *
+	 * @return void
+	 */
+	function redirect_homepage( $wp_query ) {
+		
+			if( ! is_admin() 
+				&& get_option( 'song_book_force_on_homepage', false )
+				&& $wp_query->get( 'page_id' ) == get_option( 'page_on_front' ) 
+			) {
+				
+
+					//	|| ! $wp_query->is_main_query() 
+					
+					$wp_query->set('post_type', 'songbook');
+
+					//Set properties that describe the page to reflect that
+					//we aren't really displaying a static page
+					$wp_query->set('page_id', ''); //Empty
+					$wp_query->is_page = 0;
+					$wp_query->is_singular = 0;
+					$wp_query->is_post_type_archive = 1;
+					$wp_query->is_archive = 1;
+					
+			}
+	}
+
 
 	/**
 	 * Defines constants used by the plugin.

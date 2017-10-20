@@ -75,13 +75,20 @@ class SONGBOOK_Settings {
 																										'std' 		=> '',
 																										'label' 	=> __( 'CCLI License: ', 'song_book' ),
 																										'desc'		=> __( "Enter the your organisation CCLI License number (e.g. 73846 ), once entered a new meta box will appear in the songs edit session.", 'song_book' ),
-																										//'type'      => 'field_email_post_types_option',
+																										),	
+																								array(
+																										'name' 		=> 'song_book_force_on_homepage',
+																										'std' 		=> '',
+																										'label' 	=> __( 'Home Page: ', 'song_book' ),
+																										'desc'		=> __( "Select to force the site Home Page to show the Songbook Archive.", 'song_book' ),
+																										'cb_label'      => _x( 'Enable', 'enable the setting option.', 'song_book' ), 
+																										'type'      => 'field_checkbox_option',
 																										),								
 																						),
                                                         ),															
 							'songbook_plugin_extension' => array(
 									'title' 		=> __( 'Plugin Extensions', 'songbook-text-domain' ),
-									'description' 	=> __( 'These settings are optional.  Selection of any suggested plugin here will prompt you through the installation.  The plugin will be forced active while this is selected; deselecting will not remove the plugin, you will need to manually uninstall.', 'songbook-text-domain' ),					
+									'description' 	=> __( 'Selection of any suggested plugin here will prompt you through the installation.  The plugin will be forced active while this is selected; deselecting will not remove the plugin, you will need to manually uninstall.', 'songbook-text-domain' ),					
 									'settings' 		=> array(
                                                                 array(
                                                                                                                             															

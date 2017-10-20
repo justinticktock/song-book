@@ -2,8 +2,7 @@
 Contributors: justinticktock, keycapability
 Tags: songbook, worship, singing, churches, christian
 Requires at least: 4.7
-Tested up to: 4.7.4
-Stable tag: 1.0
+Tested up to: 4.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,12 +12,14 @@ Add worship songbooks to your site
 
 Put worship into the hands of your church members.
 
-Allow church groups to create and share worship song books on any devices (tablets, mobile phones..) and keep the worship song books up to date as new songs get used in church life.
+Allow church groups to create and share worship song books on any device (tablets, mobile phones..) and keep the worship up to date as new songs get used in church life.
 
-'song book' uses the excellent [post-2-post](https://wordpress.org/plugins/posts-to-posts/) plugin by scribu, to create the association between songs and books.
+It also helps follow the legal requirement of showing the copyright information and church CCLI License along with the song words.
 
-It also helps faithful control and showing the organisation CCLI License number and show this while viewing the copyright song words.
-The site should made private and for members only unless the songs are all in the public domain (e.g. when using for a Christmas Carol songbook )
+Note: Under the CCLI license in the UK the law stands that only paper copies or emails for the use of church members is allowed.  To close this gap, until the law changes, you can request from the CCLI administration the use of a private website for the use of electronic devices with a private members only website.
+Therefore, the site should made private and for members only unless the songs are all in the public domain (e.g. our example Christmas Carol songbook )
+
+'song book' uses the excellent [post-2-post](https://wordpress.org/plugins/posts-to-posts/) plugin by scribu, to create the association between songs and books..
 
 [demo site](https://justinandco.com/demo/songbook/)
 
