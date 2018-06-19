@@ -3,7 +3,7 @@
 Plugin Name: Song Book
 Plugin URI: 
 Description: The addition of a song post type.
-Version: 1.1
+Version: 1.3
 Author: Justin Fletcher
 Author URI: http://justinandco.com
 Text Domain: songbook-text-domain

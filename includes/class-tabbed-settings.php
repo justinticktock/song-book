@@ -3,7 +3,7 @@
  * Plugin tabbed settings option class for WordPress themes.
  *
  * @package   class-tabbed-settings.php
- * @version   1.2.2
+ * @version   1.2.4
  * @author    Justin Fletcher <justin@justinandco.com>
  * @copyright Copyright ( c ) 2014, Justin Fletcher
  * @license   http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
@@ -54,6 +54,7 @@ if ( ! class_exists( 'Tabbed_Settings' ) ) {
         public $menu_access_capability = '';
         public $menu_parent = '';
         public $menu = '';
+        public $menu_hook = '';
         public $menu_title = '';
         public $page_title = '';
 		public $default_tab_key = '';
@@ -96,7 +97,9 @@ if ( ! class_exists( 'Tabbed_Settings' ) ) {
 		 */	 
 		public function add_admin_menus( ) {
 
-			add_submenu_page( $this->menu_parent, $this->page_title, $this->menu_title, $this->menu_access_capability, $this->menu, array( &$this, 'plugin_options_page' ) );
+			$this->menu_hook = add_submenu_page( $this->menu_parent, $this->page_title, $this->menu_title, $this->menu_access_capability, $this->menu, array( &$this, 'plugin_options_page' ) );
+			// provide a hook to limit actions to the settings page (note the hook can change depending on admin menu access for the current user)
+			add_action( 'load-' . $this->menu_hook, array( $this, 'do_on_settings_page' ));
 			
 		}
 
@@ -369,7 +372,7 @@ if ( ! class_exists( 'Tabbed_Settings' ) ) {
 			if ( ! file_exists( $plugin_main_file ) ) {
 				echo esc_html__( 'Enable to prompt installation and force active.', 'song-book' ) . ' ( ';
 				if ( $value ) {
-					echo '  <a href="' . add_query_arg( 'page', 'tgmpa-install-plugins', admin_url( TGM_Plugin_Activation::$instance->parent_slug ) ) . '">' .  _x( 'Install', 'Install the Plugin', 'song-book' ) . " </a> | " ;
+                                    echo '  <a href="' . add_query_arg( 'page', TGM_Plugin_Activation::$instance->menu, admin_url( 'themes.php' ) ) . '">' .  _x( 'Install', 'Install the Plugin', 'song-book' ) . " </a> | " ;
                                 }
 				
 			} elseif ( is_plugin_active( $option['slug'] . '/' . $option['slug'] . '.php' ) &&  ! is_plugin_active_for_network( $option['slug'] . '/' . $option['slug'] . '.php' ) ) {
@@ -502,10 +505,10 @@ if ( ! class_exists( 'Tabbed_Settings' ) ) {
                     $defaults = array(
                                         'value' => null,
                                         'disabled' => false,
+										'cb_label' => '',
                     );
 
                     $option = wp_parse_args( $args['option'], $defaults );	
-                    $option = $args['option'];
                     // Take value if not null
                     if( is_null( $value = $option['value'] ) ) {
                         $value = get_option( $option['name'] );
@@ -528,7 +531,6 @@ if ( ! class_exists( 'Tabbed_Settings' ) ) {
 		
 			$current_tab = isset( $_GET['tab'] ) ? sanitize_key( $_GET['tab'] ) : $this->default_tab_key;
 
-			screen_icon( );
 			echo '<h2 class="nav-tab-wrapper">';
 			foreach ( $this->settings as $tab_key => $tab_options_array ) {
 				$active = $current_tab == $tab_key ? 'nav-tab-active' : '';
@@ -551,7 +553,6 @@ if ( ! class_exists( 'Tabbed_Settings' ) ) {
 
 			$current_tab = isset( $_GET['tab'] ) ? sanitize_key( $_GET['tab'] ) : $this->default_tab_key;
 			$form_action = "options.php"; 
-			screen_icon( );
 			echo '<h2 class="nav-tab-wrapper">';
 			foreach ( $this->settings as $tab_key => $tab_options_array ) {
 				if ( $current_tab == $tab_key ) {
